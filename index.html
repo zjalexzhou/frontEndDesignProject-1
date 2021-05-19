@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>乖fey和崽贝的岛</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/cover/">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+
+    <body class="text-center">
+        <section class="three-d-container">
+            <input type="radio" checked class="three-d-bullet a" id = 'radio-a' name="three-d">
+            <input type="radio" class="three-d-bullet b" name="three-d">
+            <input type="radio" class="three-d-bullet c" name="three-d">
+            <input type="radio" class="three-d-bullet d" name="three-d">
+            <input type="radio" class="three-d-bullet e" name="three-d">
+            <input type="radio" class="three-d-bullet f" name="three-d">
+            <div class="three-d-cube">
+                <figure class="three-d-item">
+                    <img src="./images/img003.jpg" alt="">
+                </figure>
+                <figure class="three-d-item">
+                    <img src="./images/img001.jpg" alt="">
+                </figure>
+                <figure class="three-d-item">
+                    <img src="./images/img002.jpg" alt="">
+                </figure>
+                <figure class="three-d-item">
+                    <img src="./images/img004.jpg" alt="">
+                </figure>
+                <figure class="three-d-item">
+                    <img src="./images/img005.jpg" alt="">
+                </figure>
+                <figure class="three-d-item">
+                    <img src="./images/img006.jpg" alt="">
+                </figure>
+            </div>
+        </section>
+        <a href="javascript:;" onclick="toMapPage()" class="btn btn-lg btn-secondary">Launch!</a>
+
+        <p class="creds">
+            Original Design Created by <a target="_blank" href="http://twitter.com/fornyhucker">fornyhucker</a>
+        </p>     
+        <script src="https://code.jquery.com/jquery-latest.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            function toMapPage(){
+                self.location="map.html";
+            }
+            var radioButtons = $('input[name=three-d]')
+            // console.log(radioButtons[0].nodeName=='INPUT')
+            function autoRadioCheck(){
+                var $active = $('input[name=three-d]:checked');
+                // console.log($active)
+                // console.log(($active.next()))
+                if ($active.next()[0].nodeName=='INPUT'){
+                    var $next =  $active.next()
+                }
+                else {
+                    var $next = $('#radio-a')
+                }
+                $next.prop('checked', true)
+                // console.log($next)
+            }
+            $(function() {
+                setInterval( "autoRadioCheck()", 2500 );
+            });
+        </script>
+    </body>
+</html>
