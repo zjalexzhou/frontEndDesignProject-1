@@ -3,7 +3,7 @@ Leaflet Configuration
 ===================== */
 
 let mapOpts = {
-    center:[29.86045, -95.36978], // set map centered around Houston
+    center:[34.0522, -118.2437], // set map centered around Houston
     zoom: 10,
     zoomControl: false
   };
@@ -11,7 +11,7 @@ let mapOpts = {
 let map = L.map('map', mapOpts);
 
 L.control.zoom({
-position: 'bottomright'
+position: 'topright'
 }).addTo(map);
 
 let tileOpts = {
